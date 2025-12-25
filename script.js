@@ -85,9 +85,14 @@ contactForm.addEventListener('submit', async (e) => {
         const result = await response.json();
         
         if (response.ok) {
-            formMessage.textContent = 'Thank you for your message! I\'ll get back to you soon.';
+            formMessage.textContent = 'Thank you for your message! Redirecting...';
             formMessage.className = 'form-message success';
             contactForm.reset();
+            
+            // Redirect to thanks page after 1 second
+            setTimeout(() => {
+                window.location.href = 'thanks.html';
+            }, 1000);
         } else {
             throw new Error('Failed to send message');
         }
