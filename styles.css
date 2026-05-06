@@ -129,7 +129,6 @@ body {
 }
 
 .mobile-menu {
-    display: none;
     position: fixed;
     top: 64px;
     left: 0;
@@ -141,10 +140,14 @@ body {
     transform: translateY(-100%);
     transition: var(--transition);
     z-index: 999;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .mobile-menu.active {
     transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .mobile-link {
@@ -644,7 +647,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
     gap: 32px;
 }
 
@@ -1141,10 +1144,6 @@ a.info-value:hover {
 
     .menu-toggle {
         display: flex;
-    }
-
-    .mobile-menu {
-        display: block;
     }
 
     .about-grid {
