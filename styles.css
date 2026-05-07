@@ -243,13 +243,12 @@ body {
     font-size: 14px;
     font-weight: 500;
     color: #30d158;
-    background: rgba(48, 209, 88, 0.1);
-    border: 1px solid rgba(48, 209, 88, 0.3);
-    padding: 6px 16px;
+    background: rgba(48, 209, 88, 0.08);
+    border: 1px solid rgba(48, 209, 88, 0.25);
+    padding: 6px 14px;
     border-radius: 980px;
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease 0.6s forwards;
+    margin-top: 20px;
+    margin-bottom: 28px;
 }
 
 .availability-dot {

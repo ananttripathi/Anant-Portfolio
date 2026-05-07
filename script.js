@@ -190,28 +190,26 @@ clickableElements.forEach(el => {
 // ====================================
 
 const PROJECTS_DEFAULT_SHOW = 6;
-const projectCards = document.querySelectorAll('.project-card');
+const toggleText = document.getElementById('toggleText');
+const toggleArrow = document.getElementById('toggleArrow');
 const projectsToggle = document.getElementById('projectsToggle');
 let projectsExpanded = false;
 
-projectCards.forEach((card, i) => {
-    if (i >= PROJECTS_DEFAULT_SHOW) card.classList.add('hidden');
+const allProjectCards = Array.from(document.querySelectorAll('.project-card'));
+allProjectCards.forEach((card, i) => {
+    if (i >= PROJECTS_DEFAULT_SHOW) card.style.display = 'none';
 });
 
 projectsToggle.addEventListener('click', () => {
     projectsExpanded = !projectsExpanded;
-    projectCards.forEach((card, i) => {
+    allProjectCards.forEach((card, i) => {
         if (i >= PROJECTS_DEFAULT_SHOW) {
-            card.classList.toggle('hidden', !projectsExpanded);
+            card.style.display = projectsExpanded ? '' : 'none';
         }
     });
-    const svg = projectsToggle.querySelector('svg');
-    if (projectsExpanded) {
-        projectsToggle.childNodes[0].textContent = 'Show less ';
-        svg.style.transform = 'rotate(180deg)';
-    } else {
-        projectsToggle.childNodes[0].textContent = 'Show more projects ';
-        svg.style.transform = 'rotate(0deg)';
+    toggleText.textContent = projectsExpanded ? 'Show less' : 'Show more projects';
+    toggleArrow.style.transform = projectsExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+    if (!projectsExpanded) {
         document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
     }
 });
