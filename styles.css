@@ -840,6 +840,18 @@ section {
     display: block;
 }
 
+.activity-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 640px) {
+    .activity-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ====================================
    Education Section
