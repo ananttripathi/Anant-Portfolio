@@ -184,19 +184,6 @@ clickableElements.forEach(el => {
     });
 });
 
-// ====================================
-// Parallax Scroll Effect
-// ====================================
-
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero-content');
-    
-    parallaxElements.forEach(element => {
-        const speed = 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
 
 // ====================================
 // Active Link Highlighting
