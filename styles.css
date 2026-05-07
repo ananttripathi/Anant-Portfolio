@@ -279,7 +279,9 @@ body {
     justify-content: center;
     align-items: center;
     gap: 24px;
-    margin-top: 28px;
+    margin-top: 24px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.9s forwards;
 }
 
 .hero-social-link {
