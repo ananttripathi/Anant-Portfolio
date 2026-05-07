@@ -846,6 +846,21 @@ section {
     gap: 24px;
 }
 
+.activity-card--tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-tile-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
 @media (max-width: 640px) {
     .activity-stats-grid {
         grid-template-columns: 1fr;
