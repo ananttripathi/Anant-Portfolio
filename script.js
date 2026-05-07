@@ -186,6 +186,37 @@ clickableElements.forEach(el => {
 
 
 // ====================================
+// Projects Show More / Show Less
+// ====================================
+
+const PROJECTS_DEFAULT_SHOW = 6;
+const projectCards = document.querySelectorAll('.project-card');
+const projectsToggle = document.getElementById('projectsToggle');
+let projectsExpanded = false;
+
+projectCards.forEach((card, i) => {
+    if (i >= PROJECTS_DEFAULT_SHOW) card.classList.add('hidden');
+});
+
+projectsToggle.addEventListener('click', () => {
+    projectsExpanded = !projectsExpanded;
+    projectCards.forEach((card, i) => {
+        if (i >= PROJECTS_DEFAULT_SHOW) {
+            card.classList.toggle('hidden', !projectsExpanded);
+        }
+    });
+    const svg = projectsToggle.querySelector('svg');
+    if (projectsExpanded) {
+        projectsToggle.childNodes[0].textContent = 'Show less ';
+        svg.style.transform = 'rotate(180deg)';
+    } else {
+        projectsToggle.childNodes[0].textContent = 'Show more projects ';
+        svg.style.transform = 'rotate(0deg)';
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+// ====================================
 // Back to Top Button
 // ====================================
 
