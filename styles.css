@@ -804,6 +804,63 @@ section {
 }
 
 /* ====================================
+   GitHub Activity Section
+   ==================================== */
+
+.github-activity {
+    background: var(--color-bg);
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+    align-items: start;
+}
+
+.activity-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: var(--transition);
+}
+
+.activity-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
+}
+
+.activity-card-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+}
+
+.contribution-graph {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.github-stats {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+@media (max-width: 968px) {
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====================================
    Education Section
    ==================================== */
 
