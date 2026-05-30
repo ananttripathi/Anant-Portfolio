@@ -444,8 +444,9 @@ section {
 
 .growth-item {
     background: var(--color-surface);
-    padding: 32px;
+    padding: 24px;
     border-radius: 16px;
+    min-width: 0;
     border: 2px solid var(--color-border);
     transition: var(--transition);
     position: relative;
